@@ -1,0 +1,2573 @@
+(defun c:ce () ;замена блоков
+(vl-load-com)
+  (setq oldBlockName1 "e_steck2f") ; Имя блока двойной розетки Ав
+  (setq newBlockName1 "РОЗЕТКА2_2_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName1_1 "РОЗЕТКА2_ВЕРХ_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName1_2 "РОЗЕТКА2_НИЗ_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName1_3 "РОЗЕТКА2_ПРАВАЯ_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName1_4 "РОЗЕТКА2_ЛЕВАЯ_НОВЫЙ") ; Наше имя блока
+
+(setq oldBlockName2_1 "e_e-konvektor") ; Имя блока тела конвектора Ав
+  (setq newBlockName2_2 "конвектор_200_НОВЫЙ_ВЕРХ") ; Наше имя блока
+  (setq newBlockName2_3 "конвектор_200_НОВЫЙ_НИЗ") ; Наше имя блока
+  (setq newBlockName2_4 "конвектор_200_НОВЫЙ_ПРАВАЯ") ; Наше имя блока
+  (setq newBlockName2_5 "конвектор_200_НОВЫЙ_ЛЕВАЯ") ; Наше имя блока
+  
+(setq oldBlockName3_1 "e_steck1f") ; Имя блока конвектора Ав
+  (setq newBlockName3_2 "Розетка_1_НОВЕЙШАЯ_ВЕРХ") ; Наше имя блока
+  (setq newBlockName3_3 "Розетка_1_НОВЕЙШАЯ_НИЗ") ; Наше имя блока
+  (setq newBlockName3_4 "Розетка_1_НОВЕЙШАЯ_ПРАВАЯ") ; Наше имя блока
+  (setq newBlockName3_5 "Розетка_1_НОВЕЙШАЯ_ЛЕВАЯ") ; Наше имя блока
+                  
+(setq oldBlockName4_1 "e_STECK1F_hzg_2kw") ; Имя блока конвектора Ав
+  (setq newBlockName4_2 "разъем Ч_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName4_3 "разъем Ч_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName4_4 "разъем Ч_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName4_5 "разъем Ч_НОВЫЙ") ; Наше имя блока
+
+
+(setq oldBlockName5_1 "E_LED_2X18W_CXR") ; Имя блока конвектора Ав
+  (setq newBlockName5_2 "Светильник_2") ; Наше имя блока
+  (setq newBlockName5_3 "Светильник_2") ; Наше имя блока
+  (setq newBlockName5_4 "Светильник_2") ; Наше имя блока
+  (setq newBlockName5_5 "Светильник_2") ; Наше имя блока
+
+
+
+(setq oldBlockName6_1 "e_Schalt2") ; Имя блока конвектора Ав
+  (setq newBlockName6_2 "переключатель_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName6_3 "переключатель_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName6_4 "переключатель_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName6_5 "переключатель_НОВЫЙ") ; Наше имя блока
+  
+  
+(setq oldBlockName7_1 "E_NURGLASLEUCHTE_LED_CXR") ; Имя блока конвектора Ав
+  (setq newBlockName7_2 "LED_КРУГЛЫЙ_НОВЫЙ_С_НОМЕРОМ") ; Наше имя блока
+  (setq newBlockName7_3 "LED_КРУГЛЫЙ_НОВЫЙ_С_НОМЕРОМ") ; Наше имя блока
+  (setq newBlockName7_4 "LED_КРУГЛЫЙ_НОВЫЙ_С_НОМЕРОМ") ; Наше имя блока
+  (setq newBlockName7_5 "LED_КРУГЛЫЙ_НОВЫЙ_С_НОМЕРОМ") ; Наше имя блока
+
+
+
+(setq oldBlockName8_1 "e_Schalt1") ; Имя блока конвектора Ав
+  (setq newBlockName8_2 "Выключатель_1_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName8_3 "Выключатель_1_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName8_4 "Выключатель_1_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName8_5 "Выключатель_1_НОВЫЙ") ; Наше имя блока
+
+
+(setq oldBlockName9_1 "E_LED_1X18W_CXR") ; Имя блока конвектора Ав
+  (setq newBlockName9_2 "Светильник_2") ; Наше имя блока
+  (setq newBlockName9_3 "Светильник_2") ; Наше имя блока
+  (setq newBlockName9_4 "Светильник_2") ; Наше имя блока
+  (setq newBlockName9_5 "Светильник_2") ; Наше имя блока
+
+
+
+(setq oldBlockName10_1 "e_STECK1F_hwb") ; Имя блока конвектора Ав
+  (setq newBlockName10_2 "разъем Ч_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName10_3 "разъем Ч_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName10_4 "разъем Ч_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName10_5 "разъем Ч_НОВЫЙ") ; Наше имя блока
+
+                        
+(setq oldBlockName11_1 "s_hwb510n") ; Имя блока конвектора Ав
+  (setq newBlockName11_2 "Розетка_1_У_РАКОВИНЫ_НОВЕЙШАЯ_ОДНА_ВЕРХ") ; Наше имя блока
+  (setq newBlockName11_3 "Розетка_1_У_РАКОВИНЫ_НОВЕЙШАЯ_ОДНА_НИЗ") ; Наше имя блока
+  (setq newBlockName11_4 "Розетка_1_У_РАКОВИНЫ_НОВЕЙШАЯ_ОДНА_ПРАВАЯ") ; Наше имя блока
+  (setq newBlockName11_5 "Розетка_1_У_РАКОВИНЫ_НОВЕЙШАЯ_ОДНА_ЛЕВАЯ") ; Наше имя блока
+  
+  
+(setq oldBlockName12_1 "s_hwb510utn") ; Имя блока конвектора Ав
+  (setq newBlockName12_2 "Бойлер_до_300_НОВЕЙШИЙ_ВЕРХ") ; Наше имя блока
+  (setq newBlockName12_3 "Бойлер_до_300_НОВЕЙШИЙ_НИЗ") ; Наше имя блока
+  (setq newBlockName12_4 "Бойлер_до_300_НОВЕЙШИЙ_ПРАВАЯ") ; Наше имя блока
+  (setq newBlockName12_5 "Бойлер_до_300_НОВЕЙШИЙ_ЛЕВАЯ") ; Наше имя блока
+                        
+(setq oldBlockName13_1 "e_STECK1F_ut") ; Имя блока конвектора Ав
+  (setq newBlockName13_2 "Розетка_1_У_РАКОВИНЫ_НОВЕЙШАЯ_ВЕРХ") ; Наше имя блока
+  (setq newBlockName13_3 "Розетка_1_У_РАКОВИНЫ_НОВЕЙШАЯ_НИЗ") ; Наше имя блока
+  (setq newBlockName13_4 "Розетка_1_У_РАКОВИНЫ_НОВЕЙШАЯ_ПРАВАЯ") ; Наше имя блока
+  (setq newBlockName13_5 "Розетка_1_У_РАКОВИНЫ_НОВЕЙШАЯ_ЛЕВАЯ") ; Наше имя блока
+  
+(setq oldBlockName14_1 "e_Schalt1fr") ; Имя блока конвектора Ав
+  (setq newBlockName14_2 "Выключатель_1_IP_НОВЕЙШИЙ") ; Наше имя блока
+  (setq newBlockName14_3 "Выключатель_1_IP_НОВЕЙШИЙ") ; Наше имя блока
+  (setq newBlockName14_4 "Выключатель_1_IP_НОВЕЙШИЙ") ; Наше имя блока
+  (setq newBlockName14_5 "Выключатель_1_IP_НОВЕЙШИЙ") ; Наше имя блока
+ 
+(setq oldBlockName15_1 "e_SCHALT3FR") ; Имя блока конвектора Ав
+  (setq newBlockName15_2 "Выключатель_2_IP_НОВЕЙШИЙ") ; Наше имя блока
+  (setq newBlockName15_3 "Выключатель_2_IP_НОВЕЙШИЙ") ; Наше имя блока
+  (setq newBlockName15_4 "Выключатель_2_IP_НОВЕЙШИЙ") ; Наше имя блока
+  (setq newBlockName15_5 "Выключатель_2_IP_НОВЕЙШИЙ") ; Наше имя блока 
+
+(setq oldBlockName16_1 "e_STECK1F_hzg_2kwh") ; Имя блока конвектора Ав
+  (setq newBlockName16_2 "разъем Ч_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName16_3 "разъем Ч_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName16_4 "разъем Ч_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName16_5 "разъем Ч_НОВЫЙ") ; Наше имя блока 
+
+(setq oldBlockName17_1 "e_heizluft") ; Имя блока конвектора Ав
+  (setq newBlockName17_2 "Тепловентилятор_НОВЕЙШИЙ_ВЕРХ") ; Наше имя блока
+  (setq newBlockName17_3 "Тепловентилятор_НОВЕЙШИЙ_НИЗ") ; Наше имя блока
+  (setq newBlockName17_4 "Тепловентилятор_НОВЕЙШИЙ_ПРАВАЯ") ; Наше имя блока
+  (setq newBlockName17_5 "Тепловентилятор_НОВЕЙШИЙ_ЛЕВАЯ") ; Наше имя блока 
+  
+(setq oldBlockName18_1 "e_STECK1F_hzg") ; Имя блока конвектора Ав
+  (setq newBlockName18_2 "разъем Ч_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName18_3 "разъем Ч_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName18_4 "разъем Ч_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName18_5 "разъем Ч_НОВЫЙ") ; Наше имя блока    
+  
+(setq oldBlockName19_1 "e_STECK1F_hzg_0_5kw") ; Имя блока конвектора Ав
+  (setq newBlockName19_2 "разъем Ч_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName19_3 "разъем Ч_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName19_4 "разъем Ч_НОВЫЙ") ; Наше имя блока
+  (setq newBlockName19_5 "разъем Ч_НОВЫЙ") ; Наше имя блока      
+   
+(setq oldBlockName20_1 "e_frostw") ; Имя блока обогреватель малый
+  (setq newBlockName20_2 "Обогреватель_малый_полныйблок_НОВЕЙШИЙ_ВЕРХ") ; Наше имя блока
+  (setq newBlockName20_3 "Обогреватель_малый_полныйблок_НОВЕЙШИЙ_НИЗ") ; Наше имя блока
+  (setq newBlockName20_4 "Обогреватель_малый_полныйблок_НОВЕЙШИЙ_ПРАВАЯ") ; Наше имя блока
+  (setq newBlockName20_5 "Обогреватель_малый_полныйблок_НОВЕЙШИЙ_ЛЕВАЯ") ; Наше имя блока     
+  
+  
+
+  
+  
+(setq oldBlockName777_boiler_1860 "e_STECK1F_ut") ; Имя блока конвектора Ав
+
+
+
+
+
+
+;ИМЕНА ДЛЯ УДАЛЕНИЯ
+  (setq deleteBlockName "iso_b_mw150") 
+  (setq deleteBlockName2 "iso_d_mw140") 
+  (setq deleteBlockName3 "iso_d_mw120sw20")
+  (setq deleteBlockName4 "iso_b_mw100")
+  (setq deleteBlockName5 "ATTIKA_LAENGSTEIL")
+  (setq deleteBlockName6 "attika_uebergangsteil")
+  (setq deleteBlockName7 "ATTIKA_AUSSENECKE2")
+  (setq deleteBlockName8 "ATTIKA_AUSSENECKE1")
+  (setq deleteBlockName9 "bo_bodenver_dopQuer")
+  (setq deleteBlockName10 "ovr_ob_abdeckl_blech_ctr")  
+  (setq deleteBlockName11 "ovr_stahlrus_paneel")  
+  (setq deleteBlockName12 "ovr_itw_halb_stahlblech_w")  
+  (setq deleteBlockName13 "oab_obere_abdeckleiste")
+  (setq deleteBlockName14 "ovr_gipsf_folie_eh")  
+  (setq deleteBlockName15 "e_blitz")
+  (setq deleteBlockName16 "blitz")
+  (setq deleteBlockName17 "iso_d_mw100sw20")
+  (setq deleteBlockName18 "ovr_gipsf_folie_we")
+  (setq deleteBlockName19 "so_paneelverstaerkung_wc")  
+  (setq deleteBlockName20 "so_paneelverstaerkung_hwb")  
+  (setq deleteBlockName21 "so_tuerschliesser_cxr")  
+  (setq deleteBlockName22 "so_vordach_ohnestuetz_1")  
+  (setq deleteBlockName23 "ctx_orient_bubble_left")  
+  (setq deleteBlockName24 "ctx_orient_bubble_top")
+  (setq deleteBlockName25 "aus_sanitp")  
+  (setq deleteBlockName26 "aus_rus_basis")  
+  (setq deleteBlockName27 "S_ABL_DN100_WA")  
+  (setq deleteBlockName28 "S_ZUL_1_2Z_WA_MDRU")  
+  (setq deleteBlockName29 "S_ABL_DN100_BO")  
+  (setq deleteBlockName30 "s_zu-abfluss-boden")    
+  (setq deleteBlockName31 "ovr_stahlblech_mw")  
+  (setq deleteBlockName32 "ovr_ohne_sessel_ctr")  
+  (setq deleteBlockName33 "bo_hochgezogen_grau")  
+  (setq deleteBlockName34 "ovr_bodenbelag_ohnePVC")  
+  (setq deleteBlockName35 "bo_bodenver_dopQuerU")  
+  (setq deleteBlockName36 "iso_b_ohne")   
+  (setq deleteBlockName37 "attika_sonderteil24")  
+  (setq deleteBlockName38 "S_ZUL_3_4Z_WA_MDRU")   
+  (setq deleteBlockName39 "aus_rus_2591")  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+;ДЛЯ ДВОЙНОЙ РОЗЕТКИ НАЧАЛО
+  (setq exitLoop nil)
+  (setq allowedBlocks '("e_steck2f")) ; список разрешенных имен блоков
+  (setq sel (ssget '((0 . "insert"))))
+  (if sel
+    (progn
+      (setq count (sslength sel))
+      (setq i 0)
+      (while (< i count)
+        (setq blk (ssname sel i))
+        (setq blk1 (entget blk))
+        (setq blkname (cdr (assoc 2 (entget blk))))
+        
+        (if (member blkname allowedblocks)
+          (progn
+
+            (setq pt1 (cdr (assoc 10 (entget blk))))
+            (setq rotation (cdr (assoc 50 (entget blk))))
+            
+            
+            ; Здесь выполняется замена блока в зависимости от положения выбранного блока
+            (cond
+        ((= (rtos rotation) (rtos 4.7124)) ; Если поворот равен 4.7124 (левая стена)
+             
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName1_4))
+            (entmod (subst (cons 2 newBlockName1_4) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation))
+                
+        ((= (rtos rotation) (rtos 3.1416)) ; Если поворот равен 3.1416 (верхняя стена)   
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName1_1))
+            (entmod (subst (cons 2 newBlockName1_1) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation))
+            
+        ((= (rtos rotation) (rtos 1.5708)) ; Если поворот равен 1.5708 (правая стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName1_3))
+            (entmod (subst (cons 2 newBlockName1_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation))
+              
+        ((= (rtos rotation) (rtos 0.0)) ; Если поворот равен 0.0  (нижняя стена)
+                 
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName1_2))
+            (entmod (subst (cons 2 newBlockName1_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation))
+        
+        ((= (rtos rotation) (rtos 6.2832)) ; Если поворот равен 0.0  (нижняя стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName1_2))
+            (entmod (subst (cons 2 newBlockName1_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+                )
+    
+              (t ; Если ни одно из условий не выполнено, оставляем блок без изменений
+                (print rotation)))
+
+            (setq blk nil)
+            (setq rotation nil)
+            (setq pt1 nil))
+          (prompt "\nВыбранный блок не разрешен."))
+        (setq i (1+ i))))
+    (setq exitloop t))
+    (setq allowedBlocks nil)
+;ДЛЯ ДВОЙНОЙ РОЗЕТКИ КОНЕЦ
+
+
+
+
+
+
+
+
+
+
+
+;ДЛЯ КОНВЕКТОРА НАЧАЛО
+  (setq exitLoop nil)
+  (setq allowedBlocks '("e_e-konvektor")) ; список разрешенных имен блоков
+  (if sel
+    (progn
+      (setq count (sslength sel))
+      (setq i 0)
+      (while (< i count)
+        (setq blk (ssname sel i))
+        (setq blk1 (entget blk))
+        (setq blkname (cdr (assoc 2 (entget blk))))
+        (if (member blkname allowedblocks)
+          (progn
+
+            (setq pt1 (cdr (assoc 10 (entget blk))))
+            (setq rotation (cdr (assoc 50 (entget blk))))
+            
+            
+            ; Здесь выполняется замена блока в зависимости от положения выбранного блока
+            (cond
+        ((= (rtos rotation) (rtos 4.7124)) ; Если поворот равен 4.7124 (левая стена)
+             
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName2_4))
+            (entmod (subst (cons 2 newBlockName2_4) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+                
+        ((= (rtos rotation) (rtos 3.1416)) ; Если поворот равен 3.1416 (верхняя стена)   
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName2_3))
+            (entmod (subst (cons 2 newBlockName2_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+            
+        ((= (rtos rotation) (rtos 1.5708)) ; Если поворот равен 1.5708 (правая стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName2_5))
+            (entmod (subst (cons 2 newBlockName2_5) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+              
+        ((= (rtos rotation) (rtos 0.0)) ; Если поворот равен 0.0  (нижняя стена)
+                 
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName2_2))
+            (entmod (subst (cons 2 newBlockName2_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel cnt)
+            (setq cnt (1- cnt)))
+            ))
+        
+        ((= (rtos rotation) (rtos 6.2832)) ; Если поворот равен 0.0  (нижняя стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName2_2))
+            (entmod (subst (cons 2 newBlockName2_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            )
+                )
+    
+              (t ; Если ни одно из условий не выполнено, оставляем блок без изменений
+                (print rotation)))
+
+            (setq blk nil)
+            (setq rotation nil)
+            (setq pt1 nil))
+          (prompt "\nВыбранный блок не разрешен."))
+        (setq i (1+ i))))
+    (setq exitloop t))
+    (setq allowedBlocks nil)
+;ДЛЯ КОНВЕКТОРА КОНЕЦ
+
+
+
+;ДЛЯ РОЗЕТКИ ОДИНОЧНОЙ НАЧАЛО
+  (setq exitLoop nil)
+  (setq allowedBlocks '("e_steck1f")) ; список разрешенных имен блоков
+  (if sel
+    (progn
+      (setq count (sslength sel))
+      (setq i 0)
+      (while (< i count)
+        (setq blk (ssname sel i))
+        (setq blk1 (entget blk))
+        (setq blkname (cdr (assoc 2 (entget blk))))
+        (if (member blkname allowedblocks)
+          (progn
+
+            (setq pt1 (cdr (assoc 10 (entget blk))))
+            (setq rotation (cdr (assoc 50 (entget blk))))
+            
+            
+            ; Здесь выполняется замена блока в зависимости от положения выбранного блока
+            (cond
+        ((= (rtos rotation) (rtos 4.7124)) ; Если поворот равен 4.7124 (левая стена)
+             
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName3_5))
+            (entmod (subst (cons 2 newBlockName3_5) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+                
+        ((= (rtos rotation) (rtos 3.1416)) ; Если поворот равен 3.1416 (верхняя стена)   
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName3_2))
+            (entmod (subst (cons 2 newBlockName3_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+            
+        ((= (rtos rotation) (rtos 1.5708)) ; Если поворот равен 1.5708 (правая стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName3_4))
+            (entmod (subst (cons 2 newBlockName3_4) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+              
+        ((= (rtos rotation) (rtos 0.0)) ; Если поворот равен 0.0  (нижняя стена)
+                 
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName3_3))
+            (entmod (subst (cons 2 newBlockName3_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel cnt)
+            (setq cnt (1- cnt)))
+            ))
+        
+        ((= (rtos rotation) (rtos 6.2832)) ; Если поворот равен 0.0  (нижняя стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName3_3))
+            (entmod (subst (cons 2 newBlockName3_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            )
+                )
+    
+              (t ; Если ни одно из условий не выполнено, оставляем блок без изменений
+                (print rotation)))
+
+            (setq blk nil)
+            (setq rotation nil)
+            (setq pt1 nil))
+          (prompt "\nВыбранный блок не разрешен."))
+        (setq i (1+ i))))
+    (setq exitloop t))
+    (setq allowedBlocks nil)
+;ДЛЯ РОЗЕТКИ ОДИНОЧНОЙ КОНЕЦ
+
+
+;ДЛЯ розетки конвектора и тд НАЧАЛО
+  (setq exitLoop nil)
+  (setq allowedBlocks '("e_STECK1F_hzg_2kw")) ; список разрешенных имен блоков
+  (if sel
+    (progn
+      (setq count (sslength sel))
+      (setq i 0)
+      (while (< i count)
+        (setq blk (ssname sel i))
+        (setq blk1 (entget blk))
+        (setq blkname (cdr (assoc 2 (entget blk))))
+        (if (member blkname allowedblocks)
+          (progn
+
+            (setq pt1 (cdr (assoc 10 (entget blk))))
+            (setq rotation (cdr (assoc 50 (entget blk))))
+            
+            
+            ; Здесь выполняется замена блока в зависимости от положения выбранного блока
+            (cond
+        ((= (rtos rotation) (rtos 4.7124)) ; Если поворот равен 4.7124 (левая стена)
+             
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName4_4))
+            (entmod (subst (cons 2 newBlockName4_4) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+                
+        ((= (rtos rotation) (rtos 3.1416)) ; Если поворот равен 3.1416 (верхняя стена)   
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName4_3))
+            (entmod (subst (cons 2 newBlockName4_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+            
+        ((= (rtos rotation) (rtos 1.5708)) ; Если поворот равен 1.5708 (правая стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName4_5))
+            (entmod (subst (cons 2 newBlockName4_5) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+              
+        ((= (rtos rotation) (rtos 0.0)) ; Если поворот равен 0.0  (нижняя стена)
+                 
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName4_2))
+            (entmod (subst (cons 2 newBlockName4_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel cnt)
+            (setq cnt (1- cnt)))
+            ))
+        
+        ((= (rtos rotation) (rtos 6.2832)) ; Если поворот равен 0.0  (нижняя стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName4_2))
+            (entmod (subst (cons 2 newBlockName4_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            )
+                )
+    
+              (t ; Если ни одно из условий не выполнено, оставляем блок без изменений
+                (print rotation)))
+
+            (setq blk nil)
+            (setq rotation nil)
+            (setq pt1 nil))
+          (prompt "\nВыбранный блок не разрешен."))
+        (setq i (1+ i))))
+    (setq exitloop t))
+    (setq allowedBlocks nil)
+;ДЛЯ розетки конвектора и тд КОНЕЦ
+
+
+
+
+
+
+;ДЛЯ ДВОЙНОГО СВЕТИЛЬНИКА НАЧАЛО
+  (setq exitLoop nil)
+  (setq allowedBlocks '("E_LED_2X18W_CXR")) ; список разрешенных имен блоков
+  (if sel
+    (progn
+      (setq count (sslength sel))
+      (setq i 0)
+      (while (< i count)
+        (setq blk (ssname sel i))
+        (setq blk1 (entget blk))
+        (setq blkname (cdr (assoc 2 (entget blk))))
+        (if (member blkname allowedblocks)
+          (progn
+
+            (setq pt1 (cdr (assoc 10 (entget blk))))
+            (setq rotation (cdr (assoc 50 (entget blk))))
+            
+            
+            ; Здесь выполняется замена блока в зависимости от положения выбранного блока
+            (cond
+        ((= (rtos rotation) (rtos 4.7124)) ; Если поворот равен 4.7124 (левая стена)
+             
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName5_4))
+            (entmod (subst (cons 2 newBlockName5_4) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+                
+        ((= (rtos rotation) (rtos 3.1416)) ; Если поворот равен 3.1416 (верхняя стена)   
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName5_3))
+            (entmod (subst (cons 2 newBlockName5_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+            
+        ((= (rtos rotation) (rtos 1.5708)) ; Если поворот равен 1.5708 (правая стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName5_5))
+            (entmod (subst (cons 2 newBlockName5_5) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+              
+        ((= (rtos rotation) (rtos 0.0)) ; Если поворот равен 0.0  (нижняя стена)
+                 
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName5_2))
+            (entmod (subst (cons 2 newBlockName5_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel cnt)
+            (setq cnt (1- cnt)))
+            ))
+        
+        ((= (rtos rotation) (rtos 6.2832)) ; Если поворот равен 0.0  (нижняя стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName5_2))
+            (entmod (subst (cons 2 newBlockName5_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            )
+                )
+    
+              (t ; Если ни одно из условий не выполнено, оставляем блок без изменений
+                (print rotation)))
+
+            (setq blk nil)
+            (setq rotation nil)
+            (setq pt1 nil))
+          (prompt "\nВыбранный блок не разрешен."))
+        (setq i (1+ i))))
+    (setq exitloop t))
+    (setq allowedBlocks nil)
+;ДЛЯ ДВОЙНОГО СВЕТИЛЬНИКА КОНЕЦ
+
+
+;ДЛЯ ПЕРЕКЛЮЧАТЕЛЯ НАЧАЛО
+  (setq exitLoop nil)
+  (setq allowedBlocks '("e_Schalt2")) ; список разрешенных имен блоков
+  (if sel
+    (progn
+      (setq count (sslength sel))
+      (setq i 0)
+      (while (< i count)
+        (setq blk (ssname sel i))
+        (setq blk1 (entget blk))
+        (setq blkname (cdr (assoc 2 (entget blk))))
+        (if (member blkname allowedblocks)
+          (progn
+
+            (setq pt1 (cdr (assoc 10 (entget blk))))
+            (setq rotation (cdr (assoc 50 (entget blk))))
+            
+            
+            ; Здесь выполняется замена блока в зависимости от положения выбранного блока
+            (cond
+        ((= (rtos rotation) (rtos 4.7124)) ; Если поворот равен 4.7124 (левая стена)
+             
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName6_5))
+            (entmod (subst (cons 2 newBlockName6_5) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+                
+        ((= (rtos rotation) (rtos 3.1416)) ; Если поворот равен 3.1416 (верхняя стена)   
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName6_2))
+            (entmod (subst (cons 2 newBlockName6_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+            
+        ((= (rtos rotation) (rtos 1.5708)) ; Если поворот равен 1.5708 (правая стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName6_4))
+            (entmod (subst (cons 2 newBlockName6_4) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+              
+        ((= (rtos rotation) (rtos 0.0)) ; Если поворот равен 0.0  (нижняя стена)
+                 
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName6_3))
+            (entmod (subst (cons 2 newBlockName6_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel cnt)
+            (setq cnt (1- cnt)))
+            ))
+        
+        ((= (rtos rotation) (rtos 6.2832)) ; Если поворот равен 0.0  (нижняя стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName6_3))
+            (entmod (subst (cons 2 newBlockName6_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            )
+                )
+    
+              (t ; Если ни одно из условий не выполнено, оставляем блок без изменений
+                (print rotation)))
+
+            (setq blk nil)
+            (setq rotation nil)
+            (setq pt1 nil))
+          (prompt "\nВыбранный блок не разрешен."))
+        (setq i (1+ i))))
+    (setq exitloop t))
+    (setq allowedBlocks nil)
+;ДЛЯ ПЕРЕКЛЮЧАТЕЛЯ КОНЕЦ
+
+
+
+;ДЛЯ КРУГЛОГО СВЕТИЛЬНИКА НАЧАЛО
+  (setq exitLoop nil)
+  (setq allowedBlocks '("E_NURGLASLEUCHTE_LED_CXR")) ; список разрешенных имен блоков
+  (if sel
+    (progn
+      (setq count (sslength sel))
+      (setq i 0)
+      (while (< i count)
+        (setq blk (ssname sel i))
+        (setq blk1 (entget blk))
+        (setq blkname (cdr (assoc 2 (entget blk))))
+        (if (member blkname allowedblocks)
+          (progn
+
+            (setq pt1 (cdr (assoc 10 (entget blk))))
+            (setq rotation (cdr (assoc 50 (entget blk))))
+            
+            
+            ; Здесь выполняется замена блока в зависимости от положения выбранного блока
+            (cond
+        ((= (rtos rotation) (rtos 4.7124)) ; Если поворот равен 4.7124 (левая стена)
+             
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName7_5))
+            (entmod (subst (cons 2 newBlockName7_5) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+                
+        ((= (rtos rotation) (rtos 3.1416)) ; Если поворот равен 3.1416 (верхняя стена)   
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName7_2))
+            (entmod (subst (cons 2 newBlockName7_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+            
+        ((= (rtos rotation) (rtos 1.5708)) ; Если поворот равен 1.5708 (правая стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName7_4))
+            (entmod (subst (cons 2 newBlockName7_4) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+              
+        ((= (rtos rotation) (rtos 0.0)) ; Если поворот равен 0.0  (нижняя стена)
+                 
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName7_3))
+            (entmod (subst (cons 2 newBlockName7_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel cnt)
+            (setq cnt (1- cnt)))
+            ))
+        
+        ((= (rtos rotation) (rtos 6.2832)) ; Если поворот равен 0.0  (нижняя стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName7_3))
+            (entmod (subst (cons 2 newBlockName7_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            )
+                )
+    
+              (t ; Если ни одно из условий не выполнено, оставляем блок без изменений
+                (print rotation)))
+
+            (setq blk nil)
+            (setq rotation nil)
+            (setq pt1 nil))
+          (prompt "\nВыбранный блок не разрешен."))
+        (setq i (1+ i))))
+    (setq exitloop t))
+    (setq allowedBlocks nil)
+;ДЛЯ КРУГЛОГО СВЕТИЛЬНИКА КОНЕЦ
+
+
+;ДЛЯ ОДИНОЧНОГО ВЫКЛЮЧАТЕЛЯ НАЧАЛО
+  (setq exitLoop nil)
+  (setq allowedBlocks '("e_Schalt1")) ; список разрешенных имен блоков
+  (if sel
+    (progn
+      (setq count (sslength sel))
+      (setq i 0)
+      (while (< i count)
+        (setq blk (ssname sel i))
+        (setq blk1 (entget blk))
+        (setq blkname (cdr (assoc 2 (entget blk))))
+        (if (member blkname allowedblocks)
+          (progn
+
+            (setq pt1 (cdr (assoc 10 (entget blk))))
+            (setq rotation (cdr (assoc 50 (entget blk))))
+            
+            
+            ; Здесь выполняется замена блока в зависимости от положения выбранного блока
+            (cond
+        ((= (rtos rotation) (rtos 4.7124)) ; Если поворот равен 4.7124 (левая стена)
+             
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName8_5))
+            (entmod (subst (cons 2 newBlockName8_5) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+                
+        ((= (rtos rotation) (rtos 3.1416)) ; Если поворот равен 3.1416 (верхняя стена)   
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName8_2))
+            (entmod (subst (cons 2 newBlockName8_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+            
+        ((= (rtos rotation) (rtos 1.5708)) ; Если поворот равен 1.5708 (правая стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName8_4))
+            (entmod (subst (cons 2 newBlockName8_4) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+              
+        ((= (rtos rotation) (rtos 0.0)) ; Если поворот равен 0.0  (нижняя стена)
+                 
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName8_3))
+            (entmod (subst (cons 2 newBlockName8_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel cnt)
+            (setq cnt (1- cnt)))
+            ))
+        
+        ((= (rtos rotation) (rtos 6.2832)) ; Если поворот равен 0.0  (нижняя стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName8_3))
+            (entmod (subst (cons 2 newBlockName8_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            )
+                )
+    
+              (t ; Если ни одно из условий не выполнено, оставляем блок без изменений
+                (print rotation)))
+
+            (setq blk nil)
+            (setq rotation nil)
+            (setq pt1 nil))
+          (prompt "\nВыбранный блок не разрешен."))
+        (setq i (1+ i))))
+    (setq exitloop t))
+    (setq allowedBlocks nil)
+;ДЛЯ ОДИНОЧНОГО ВЫКЛЮЧАТЕЛЯ КОНЕЦ
+
+
+
+;ДЛЯ ОДНОЛАМПОВОГО СВЕТИЛЬНИКА НАЧАЛО
+  (setq exitLoop nil)
+  (setq allowedBlocks '("E_LED_1X18W_CXR")) ; список разрешенных имен блоков
+  (if sel
+    (progn
+      (setq count (sslength sel))
+      (setq i 0)
+      (while (< i count)
+        (setq blk (ssname sel i))
+        (setq blk1 (entget blk))
+        (setq blkname (cdr (assoc 2 (entget blk))))
+        (if (member blkname allowedblocks)
+          (progn
+
+            (setq pt1 (cdr (assoc 10 (entget blk))))
+            (setq rotation (cdr (assoc 50 (entget blk))))
+            
+            
+            ; Здесь выполняется замена блока в зависимости от положения выбранного блока
+            (cond
+        ((= (rtos rotation) (rtos 4.7124)) ; Если поворот равен 4.7124 (левая стена)
+             
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName9_4))
+            (entmod (subst (cons 2 newBlockName9_4) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+                
+        ((= (rtos rotation) (rtos 3.1416)) ; Если поворот равен 3.1416 (верхняя стена)   
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName9_3))
+            (entmod (subst (cons 2 newBlockName9_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+            
+        ((= (rtos rotation) (rtos 1.5708)) ; Если поворот равен 1.5708 (правая стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName9_5))
+            (entmod (subst (cons 2 newBlockName9_5) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+              
+        ((= (rtos rotation) (rtos 0.0)) ; Если поворот равен 0.0  (нижняя стена)
+                 
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName9_2))
+            (entmod (subst (cons 2 newBlockName9_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel cnt)
+            (setq cnt (1- cnt)))
+            ))
+        
+        ((= (rtos rotation) (rtos 6.2832)) ; Если поворот равен 0.0  (нижняя стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName9_2))
+            (entmod (subst (cons 2 newBlockName9_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            )
+                )
+    
+              (t ; Если ни одно из условий не выполнено, оставляем блок без изменений
+                (print rotation)))
+
+            (setq blk nil)
+            (setq rotation nil)
+            (setq pt1 nil))
+          (prompt "\nВыбранный блок не разрешен."))
+        (setq i (1+ i))))
+    (setq exitloop t))
+    (setq allowedBlocks nil)
+;ДЛЯ ОДНОЛАМПОВОГО СВЕТИЛЬНИКА КОНЕЦ
+
+
+
+
+
+
+
+;ДЛЯ РОЗЕТКИ ПОД БОЙЛЕР И ТД НАЧАЛО
+  (setq exitLoop nil)
+  (setq allowedBlocks '("e_STECK1F_hwb")) ; список разрешенных имен блоков
+  (if sel
+    (progn
+      (setq count (sslength sel))
+      (setq i 0)
+      (while (< i count)
+        (setq blk (ssname sel i))
+        (setq blk1 (entget blk))
+        (setq blkname (cdr (assoc 2 (entget blk))))
+        (if (member blkname allowedblocks)
+          (progn
+
+            (setq pt1 (cdr (assoc 10 (entget blk))))
+            (setq rotation (cdr (assoc 50 (entget blk))))
+            
+            
+            ; Здесь выполняется замена блока в зависимости от положения выбранного блока
+            (cond
+        ((= (rtos rotation) (rtos 4.7124)) ; Если поворот равен 4.7124 (левая стена)
+             
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName10_4))
+            (entmod (subst (cons 2 newBlockName10_4) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+                
+        ((= (rtos rotation) (rtos 3.1416)) ; Если поворот равен 3.1416 (верхняя стена)   
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName10_3))
+            (entmod (subst (cons 2 newBlockName10_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+            
+        ((= (rtos rotation) (rtos 1.5708)) ; Если поворот равен 1.5708 (правая стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName10_5))
+            (entmod (subst (cons 2 newBlockName10_5) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+              
+        ((= (rtos rotation) (rtos 0.0)) ; Если поворот равен 0.0  (нижняя стена)
+                 
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName10_2))
+            (entmod (subst (cons 2 newBlockName10_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel cnt)
+            (setq cnt (1- cnt)))
+            ))
+        
+        ((= (rtos rotation) (rtos 6.2832)) ; Если поворот равен 0.0  (нижняя стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName10_2))
+            (entmod (subst (cons 2 newBlockName10_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            )
+                )
+    
+              (t ; Если ни одно из условий не выполнено, оставляем блок без изменений
+                (print rotation)))
+
+            (setq blk nil)
+            (setq rotation nil)
+            (setq pt1 nil))
+          (prompt "\nВыбранный блок не разрешен."))
+        (setq i (1+ i))))
+    (setq exitloop t))
+    (setq allowedBlocks nil)
+;ДЛЯ РОЗЕТКИ ПОД БОЙЛЕР И ТД КОНЕЦ
+
+
+
+;ДЛЯ РАКОВИНА С РОЗЕТКОЙ НАЧАЛО
+  (setq exitLoop nil)
+  (setq allowedBlocks '("s_hwb510n")) ; список разрешенных имен блоков
+  (if sel
+    (progn
+      (setq count (sslength sel))
+      (setq i 0)
+      (while (< i count)
+        (setq blk (ssname sel i))
+        (setq blk1 (entget blk))
+        (setq blkname (cdr (assoc 2 (entget blk))))
+        (if (member blkname allowedblocks)
+          (progn
+
+            (setq pt1 (cdr (assoc 10 (entget blk))))
+            (setq rotation (cdr (assoc 50 (entget blk))))
+            
+            
+            ; Здесь выполняется замена блока в зависимости от положения выбранного блока
+            (cond
+        ((= (rtos rotation) (rtos 4.7124)) ; Если поворот равен 4.7124 (левая стена)
+             
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName11_2))
+            (entmod (subst (cons 2 newBlockName11_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+                
+        ((= (rtos rotation) (rtos 3.1416)) ; Если поворот равен 3.1416 (верхняя стена)   
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName11_4))
+            (entmod (subst (cons 2 newBlockName11_4) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+            
+        ((= (rtos rotation) (rtos 1.5708)) ; Если поворот равен 1.5708 (правая стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName11_3))
+            (entmod (subst (cons 2 newBlockName11_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+              
+        ((= (rtos rotation) (rtos 0.0)) ; Если поворот равен 0.0  (нижняя стена)
+                 
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName11_4))
+            (entmod (subst (cons 2 newBlockName11_4) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel cnt)
+            (setq cnt (1- cnt)))
+            ))
+        
+        ((= (rtos rotation) (rtos 6.2832)) ; Если поворот равен 0.0  (нижняя стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName11_5))
+            (entmod (subst (cons 2 newBlockName11_5) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            )
+                )
+    
+              (t ; Если ни одно из условий не выполнено, оставляем блок без изменений
+                (print rotation)))
+
+            (setq blk nil)
+            (setq rotation nil)
+            (setq pt1 nil))
+          (prompt "\nВыбранный блок не разрешен."))
+        (setq i (1+ i))))
+    (setq exitloop t))
+    (setq allowedBlocks nil)
+;ДЛЯ РАКОВИНА С РОЗЕТКОЙ КОНЕЦ
+
+
+
+
+;ДЛЯ РАКОВИНА С РОЗЕТКОЙ И БОЙЛЕРОМ НАЧАЛО
+  (setq exitLoop nil)
+  (setq allowedBlocks '("s_hwb510utn")) ; список разрешенных имен блоков
+  (if sel
+    (progn
+      (setq count (sslength sel))
+      (setq i 0)
+      (while (< i count)
+        (setq blk (ssname sel i))
+        (setq blk1 (entget blk))
+        (setq blkname (cdr (assoc 2 (entget blk))))
+        (if (member blkname allowedblocks)
+          (progn
+
+            (setq pt1 (cdr (assoc 10 (entget blk))))
+            (setq rotation (cdr (assoc 50 (entget blk))))
+            
+            
+            ; Здесь выполняется замена блока в зависимости от положения выбранного блока
+            (cond
+        ((= (rtos rotation) (rtos 4.7124)) ; Если поворот равен 4.7124 (левая стена)
+             
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName12_2))
+            (entmod (subst (cons 2 newBlockName12_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+                
+        ((= (rtos rotation) (rtos 3.1416)) ; Если поворот равен 3.1416 (верхняя стена)   
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName12_4))
+            (entmod (subst (cons 2 newBlockName12_4) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+            
+        ((= (rtos rotation) (rtos 1.5708)) ; Если поворот равен 1.5708 (правая стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName12_3))
+            (entmod (subst (cons 2 newBlockName12_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+              
+        ((= (rtos rotation) (rtos 0.0)) ; Если поворот равен 0.0  (нижняя стена)
+                 
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName12_5))
+            (entmod (subst (cons 2 newBlockName12_5) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel cnt)
+            (setq cnt (1- cnt)))
+            ))
+        
+        ((= (rtos rotation) (rtos 6.2832)) ; Если поворот равен 0.0  (нижняя стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName12_5))
+            (entmod (subst (cons 2 newBlockName12_5) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            )
+                )
+    
+              (t ; Если ни одно из условий не выполнено, оставляем блок без изменений
+                (print rotation)))
+
+            (setq blk nil)
+            (setq rotation nil)
+            (setq pt1 nil))
+          (prompt "\nВыбранный блок не разрешен."))
+        (setq i (1+ i))))
+    (setq exitloop t))
+    (setq allowedBlocks nil)
+;ДЛЯ РАКОВИНА С РОЗЕТКОЙ И БОЙЛЕРОМ КОНЕЦ
+
+
+
+
+
+;ДЛЯ РОЗЕТКА У РАКОВИНЫ НАЧАЛО
+  (setq exitLoop nil)
+  (setq allowedBlocks '("e_STECK1F_ut")) ; список разрешенных имен блоков
+  (if sel
+    (progn
+      (setq count (sslength sel))
+      (setq i 0)
+      (while (< i count)
+        (setq blk (ssname sel i))
+        (setq blk1 (entget blk))
+        (setq blkname (cdr (assoc 2 (entget blk))))
+        (if (member blkname allowedblocks)
+          (progn
+
+            (setq pt1 (cdr (assoc 10 (entget blk))))
+            (setq rotation (cdr (assoc 50 (entget blk))))
+            
+            
+            ; Здесь выполняется замена блока в зависимости от положения выбранного блока
+            (cond
+        ((= (rtos rotation) (rtos 4.7124)) ; Если поворот равен 4.7124 (левая стена)
+             
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName13_5))
+            (entmod (subst (cons 2 newBlockName13_5) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+                
+        ((= (rtos rotation) (rtos 3.1416)) ; Если поворот равен 3.1416 (верхняя стена)   
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName13_2))
+            (entmod (subst (cons 2 newBlockName13_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+            
+        ((= (rtos rotation) (rtos 1.5708)) ; Если поворот равен 1.5708 (правая стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName13_4))
+            (entmod (subst (cons 2 newBlockName13_4) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+              
+        ((= (rtos rotation) (rtos 0.0)) ; Если поворот равен 0.0  (нижняя стена)
+                 
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName13_3))
+            (entmod (subst (cons 2 newBlockName13_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel cnt)
+            (setq cnt (1- cnt)))
+            ))
+        
+        ((= (rtos rotation) (rtos 6.2832)) ; Если поворот равен 0.0  (нижняя стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName13_3))
+            (entmod (subst (cons 2 newBlockName13_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            )
+                )
+    
+              (t ; Если ни одно из условий не выполнено, оставляем блок без изменений
+                (print rotation)))
+
+            (setq blk nil)
+            (setq rotation nil)
+            (setq pt1 nil))
+          (prompt "\nВыбранный блок не разрешен."))
+        (setq i (1+ i))))
+    (setq exitloop t))
+    (setq allowedBlocks nil)
+;ДЛЯ РОЗЕТКА У РАКОВИНЫ КОНЕЦ
+
+
+
+
+
+
+
+
+;ДЛЯ ВЫКЛЮЧАТЕЛЯ IP НАЧАЛО
+  (setq exitLoop nil)
+  (setq allowedBlocks '("e_Schalt1fr")) ; список разрешенных имен блоков
+  (if sel
+    (progn
+      (setq count (sslength sel))
+      (setq i 0)
+      (while (< i count)
+        (setq blk (ssname sel i))
+        (setq blk1 (entget blk))
+        (setq blkname (cdr (assoc 2 (entget blk))))
+        (if (member blkname allowedblocks)
+          (progn
+
+            (setq pt1 (cdr (assoc 10 (entget blk))))
+            (setq rotation (cdr (assoc 50 (entget blk))))
+            
+            
+            ; Здесь выполняется замена блока в зависимости от положения выбранного блока
+            (cond
+        ((= (rtos rotation) (rtos 4.7124)) ; Если поворот равен 4.7124 (левая стена)
+             
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName14_4))
+            (entmod (subst (cons 2 newBlockName14_4) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+                
+        ((= (rtos rotation) (rtos 3.1416)) ; Если поворот равен 3.1416 (верхняя стена)   
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName14_3))
+            (entmod (subst (cons 2 newBlockName14_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+            
+        ((= (rtos rotation) (rtos 1.5708)) ; Если поворот равен 1.5708 (правая стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName14_5))
+            (entmod (subst (cons 2 newBlockName14_5) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+              
+        ((= (rtos rotation) (rtos 0.0)) ; Если поворот равен 0.0  (нижняя стена)
+                 
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName14_2))
+            (entmod (subst (cons 2 newBlockName14_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel cnt)
+            (setq cnt (1- cnt)))
+            ))
+        
+        ((= (rtos rotation) (rtos 6.2832)) ; Если поворот равен 0.0  (нижняя стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName14_2))
+            (entmod (subst (cons 2 newBlockName14_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            )
+                )
+    
+              (t ; Если ни одно из условий не выполнено, оставляем блок без изменений
+                (print rotation)))
+
+            (setq blk nil)
+            (setq rotation nil)
+            (setq pt1 nil))
+          (prompt "\nВыбранный блок не разрешен."))
+        (setq i (1+ i))))
+    (setq exitloop t))
+    (setq allowedBlocks nil)
+;ДЛЯ ВЫКЛЮЧАТЕЛЯ IP КОНЕЦ
+
+
+
+
+
+
+;ДЛЯ 2КЛАВИШНОГО ВЫКЛЮЧАТЕЛЯ IP НАЧАЛО
+  (setq exitLoop nil)
+  (setq allowedBlocks '("e_SCHALT3FR")) ; список разрешенных имен блоков
+  (if sel
+    (progn
+      (setq count (sslength sel))
+      (setq i 0)
+      (while (< i count)
+        (setq blk (ssname sel i))
+        (setq blk1 (entget blk))
+        (setq blkname (cdr (assoc 2 (entget blk))))
+        (if (member blkname allowedblocks)
+          (progn
+
+            (setq pt1 (cdr (assoc 10 (entget blk))))
+            (setq rotation (cdr (assoc 50 (entget blk))))
+            
+            
+            ; Здесь выполняется замена блока в зависимости от положения выбранного блока
+            (cond
+        ((= (rtos rotation) (rtos 4.7124)) ; Если поворот равен 4.7124 (левая стена)
+             
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName15_4))
+            (entmod (subst (cons 2 newBlockName15_4) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+                
+        ((= (rtos rotation) (rtos 3.1416)) ; Если поворот равен 3.1416 (верхняя стена)   
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName15_3))
+            (entmod (subst (cons 2 newBlockName15_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+            
+        ((= (rtos rotation) (rtos 1.5708)) ; Если поворот равен 1.5708 (правая стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName15_5))
+            (entmod (subst (cons 2 newBlockName15_5) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+              
+        ((= (rtos rotation) (rtos 0.0)) ; Если поворот равен 0.0  (нижняя стена)
+                 
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName15_2))
+            (entmod (subst (cons 2 newBlockName15_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel cnt)
+            (setq cnt (1- cnt)))
+            ))
+        
+        ((= (rtos rotation) (rtos 6.2832)) ; Если поворот равен 0.0  (нижняя стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName15_2))
+            (entmod (subst (cons 2 newBlockName15_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            )
+                )
+    
+              (t ; Если ни одно из условий не выполнено, оставляем блок без изменений
+                (print rotation)))
+
+            (setq blk nil)
+            (setq rotation nil)
+            (setq pt1 nil))
+          (prompt "\nВыбранный блок не разрешен."))
+        (setq i (1+ i))))
+    (setq exitloop t))
+    (setq allowedBlocks nil)
+;ДЛЯ 2КЛАВИШНОГО ВЫКЛЮЧАТЕЛЯ IP КОНЕЦ
+
+
+
+
+;ДЛЯ РОЗЕТКИ ПОД ТЕПЛОВЕНТИЛЯТОР НАЧАЛО
+  (setq exitLoop nil)
+  (setq allowedBlocks '("e_STECK1F_hzg_2kwh")) ; список разрешенных имен блоков
+  (if sel
+    (progn
+      (setq count (sslength sel))
+      (setq i 0)
+      (while (< i count)
+        (setq blk (ssname sel i))
+        (setq blk1 (entget blk))
+        (setq blkname (cdr (assoc 2 (entget blk))))
+        (if (member blkname allowedblocks)
+          (progn
+
+            (setq pt1 (cdr (assoc 10 (entget blk))))
+            (setq rotation (cdr (assoc 50 (entget blk))))
+            
+            
+            ; Здесь выполняется замена блока в зависимости от положения выбранного блока
+            (cond
+        ((= (rtos rotation) (rtos 4.7124)) ; Если поворот равен 4.7124 (левая стена)
+             
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName16_4))
+            (entmod (subst (cons 2 newBlockName16_4) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+                
+        ((= (rtos rotation) (rtos 3.1416)) ; Если поворот равен 3.1416 (верхняя стена)   
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName16_3))
+            (entmod (subst (cons 2 newBlockName16_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+            
+        ((= (rtos rotation) (rtos 1.5708)) ; Если поворот равен 1.5708 (правая стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName16_5))
+            (entmod (subst (cons 2 newBlockName16_5) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+              
+        ((= (rtos rotation) (rtos 0.0)) ; Если поворот равен 0.0  (нижняя стена)
+                 
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName16_2))
+            (entmod (subst (cons 2 newBlockName16_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel cnt)
+            (setq cnt (1- cnt)))
+            ))
+        
+        ((= (rtos rotation) (rtos 6.2832)) ; Если поворот равен 0.0  (нижняя стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName16_2))
+            (entmod (subst (cons 2 newBlockName16_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            )
+                )
+    
+              (t ; Если ни одно из условий не выполнено, оставляем блок без изменений
+                (print rotation)))
+
+            (setq blk nil)
+            (setq rotation nil)
+            (setq pt1 nil))
+          (prompt "\nВыбранный блок не разрешен."))
+        (setq i (1+ i))))
+    (setq exitloop t))
+    (setq allowedBlocks nil)
+;ДЛЯ РОЗЕТКИ ПОД ТЕПЛОВЕНТИЛЯТОР КОНЕЦ
+
+
+
+
+
+;ДЛЯ ТЕПЛОВЕНТИЛЯТОРА НАЧАЛО
+  (setq exitLoop nil)
+  (setq allowedBlocks '("e_heizluft")) ; список разрешенных имен блоков
+  (if sel
+    (progn
+      (setq count (sslength sel))
+      (setq i 0)
+      (while (< i count)
+        (setq blk (ssname sel i))
+        (setq blk1 (entget blk))
+        (setq blkname (cdr (assoc 2 (entget blk))))
+        (if (member blkname allowedblocks)
+          (progn
+
+            (setq pt1 (cdr (assoc 10 (entget blk))))
+            (setq rotation (cdr (assoc 50 (entget blk))))
+            
+            
+            ; Здесь выполняется замена блока в зависимости от положения выбранного блока
+            (cond
+        ((= (rtos rotation) (rtos 4.7124)) ; Если поворот равен 4.7124 (левая стена)
+             
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName17_5))
+            (entmod (subst (cons 2 newBlockName17_5) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+                
+        ((= (rtos rotation) (rtos 3.1416)) ; Если поворот равен 3.1416 (верхняя стена)   
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName17_3))
+            (entmod (subst (cons 2 newBlockName17_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+            
+        ((= (rtos rotation) (rtos 1.5708)) ; Если поворот равен 1.5708 (правая стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName17_4))
+            (entmod (subst (cons 2 newBlockName17_4) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+              
+        ((= (rtos rotation) (rtos 0.0)) ; Если поворот равен 0.0  (нижняя стена)
+                 
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName17_2))
+            (entmod (subst (cons 2 newBlockName17_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel cnt)
+            (setq cnt (1- cnt)))
+            ))
+        
+        ((= (rtos rotation) (rtos 6.2832)) ; Если поворот равен 0.0  (нижняя стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName17_2))
+            (entmod (subst (cons 2 newBlockName17_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            )
+                )
+    
+              (t ; Если ни одно из условий не выполнено, оставляем блок без изменений
+                (print rotation)))
+
+            (setq blk nil)
+            (setq rotation nil)
+            (setq pt1 nil))
+          (prompt "\nВыбранный блок не разрешен."))
+        (setq i (1+ i))))
+    (setq exitloop t))
+    (setq allowedBlocks nil)
+;ДЛЯ ТЕПЛОВЕНТИЛЯТОРА КОНЕЦ
+
+
+
+
+;ДЛЯ РОЗЕТКИ ПОД КОНВЕКТОР НАЧАЛО
+  (setq exitLoop nil)
+  (setq allowedBlocks '("e_STECK1F_hzg")) ; список разрешенных имен блоков
+  (if sel
+    (progn
+      (setq count (sslength sel))
+      (setq i 0)
+      (while (< i count)
+        (setq blk (ssname sel i))
+        (setq blk1 (entget blk))
+        (setq blkname (cdr (assoc 2 (entget blk))))
+        (if (member blkname allowedblocks)
+          (progn
+
+            (setq pt1 (cdr (assoc 10 (entget blk))))
+            (setq rotation (cdr (assoc 50 (entget blk))))
+            
+            
+            ; Здесь выполняется замена блока в зависимости от положения выбранного блока
+            (cond
+        ((= (rtos rotation) (rtos 4.7124)) ; Если поворот равен 4.7124 (левая стена)
+             
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName18_4))
+            (entmod (subst (cons 2 newBlockName18_4) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+                
+        ((= (rtos rotation) (rtos 3.1416)) ; Если поворот равен 3.1416 (верхняя стена)   
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName16_3))
+            (entmod (subst (cons 2 newBlockName16_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+            
+        ((= (rtos rotation) (rtos 1.5708)) ; Если поворот равен 1.5708 (правая стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName16_5))
+            (entmod (subst (cons 2 newBlockName16_5) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+              
+        ((= (rtos rotation) (rtos 0.0)) ; Если поворот равен 0.0  (нижняя стена)
+                 
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName16_2))
+            (entmod (subst (cons 2 newBlockName16_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel cnt)
+            (setq cnt (1- cnt)))
+            ))
+        
+        ((= (rtos rotation) (rtos 6.2832)) ; Если поворот равен 0.0  (нижняя стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName16_2))
+            (entmod (subst (cons 2 newBlockName16_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            )
+                )
+    
+              (t ; Если ни одно из условий не выполнено, оставляем блок без изменений
+                (print rotation)))
+
+            (setq blk nil)
+            (setq rotation nil)
+            (setq pt1 nil))
+          (prompt "\nВыбранный блок не разрешен."))
+        (setq i (1+ i))))
+    (setq exitloop t))
+    (setq allowedBlocks nil)
+;ДЛЯ РОЗЕТКИ ПОД КОНВЕКТОР КОНЕЦ
+
+
+;ДЛЯ РОЗЕТКИ ПОД МАЛЫЙ ОБОГРЕВАТЕЛЬ НАЧАЛО
+  (setq exitLoop nil)
+  (setq allowedBlocks '("e_STECK1F_hzg_0_5kw")) ; список разрешенных имен блоков
+  (if sel
+    (progn
+      (setq count (sslength sel))
+      (setq i 0)
+      (while (< i count)
+        (setq blk (ssname sel i))
+        (setq blk1 (entget blk))
+        (setq blkname (cdr (assoc 2 (entget blk))))
+        (if (member blkname allowedblocks)
+          (progn
+
+            (setq pt1 (cdr (assoc 10 (entget blk))))
+            (setq rotation (cdr (assoc 50 (entget blk))))
+            
+            
+            ; Здесь выполняется замена блока в зависимости от положения выбранного блока
+            (cond
+        ((= (rtos rotation) (rtos 4.7124)) ; Если поворот равен 4.7124 (левая стена)
+             
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName19_4))
+            (entmod (subst (cons 2 newBlockName19_4) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+                
+        ((= (rtos rotation) (rtos 3.1416)) ; Если поворот равен 3.1416 (верхняя стена)   
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName19_3))
+            (entmod (subst (cons 2 newBlockName19_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+            
+        ((= (rtos rotation) (rtos 1.5708)) ; Если поворот равен 1.5708 (правая стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName19_5))
+            (entmod (subst (cons 2 newBlockName19_5) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+              
+        ((= (rtos rotation) (rtos 0.0)) ; Если поворот равен 0.0  (нижняя стена)
+                 
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName19_2))
+            (entmod (subst (cons 2 newBlockName19_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel cnt)
+            (setq cnt (1- cnt)))
+            ))
+        
+        ((= (rtos rotation) (rtos 6.2832)) ; Если поворот равен 0.0  (нижняя стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName19_2))
+            (entmod (subst (cons 2 newBlockName19_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            )
+                )
+    
+              (t ; Если ни одно из условий не выполнено, оставляем блок без изменений
+                (print rotation)))
+
+            (setq blk nil)
+            (setq rotation nil)
+            (setq pt1 nil))
+          (prompt "\nВыбранный блок не разрешен."))
+        (setq i (1+ i))))
+    (setq exitloop t))
+    (setq allowedBlocks nil)
+;ДЛЯ РОЗЕТКИ ПОД МАЛЫЙ ОБОГРЕВАТЕЛЬ КОНЕЦ
+
+
+;ДЛЯ ОБОГРЕВАТЕЛЯ МАЛОГО НАЧАЛО
+  (setq exitLoop nil)
+  (setq allowedBlocks '("e_frostw")) ; список разрешенных имен блоков
+  (if sel
+    (progn
+      (setq count (sslength sel))
+      (setq i 0)
+      (while (< i count)
+        (setq blk (ssname sel i))
+        (setq blk1 (entget blk))
+        (setq blkname (cdr (assoc 2 (entget blk))))
+        (if (member blkname allowedblocks)
+          (progn
+
+            (setq pt1 (cdr (assoc 10 (entget blk))))
+            (setq rotation (cdr (assoc 50 (entget blk))))
+            
+            
+            ; Здесь выполняется замена блока в зависимости от положения выбранного блока
+            (cond
+        ((= (rtos rotation) (rtos 4.7124)) ; Если поворот равен 4.7124 (левая стена)
+             
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName20_3))
+            (entmod (subst (cons 2 newBlockName20_3) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+                
+        ((= (rtos rotation) (rtos 3.1416)) ; Если поворот равен 3.1416 (верхняя стена)   
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName20_5))
+            (entmod (subst (cons 2 newBlockName20_5) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+            
+        ((= (rtos rotation) (rtos 1.5708)) ; Если поворот равен 1.5708 (правая стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName20_4))
+            (entmod (subst (cons 2 newBlockName20_4) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            ))
+              
+        ((= (rtos rotation) (rtos 0.0)) ; Если поворот равен 0.0  (нижняя стена)
+                 
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName20_2))
+            (entmod (subst (cons 2 newBlockName20_2) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel cnt)
+            (setq cnt (1- cnt)))
+            ))
+        
+        ((= (rtos rotation) (rtos 6.2832)) ; Если поворот равен 0.0  (нижняя стена)
+            (setq newBlk (vlax-invoke-method (vla-get-Blocks (vla-get-ActiveDocument (vlax-get-Acad-object))) 'Item newBlockName20_4))
+            (entmod (subst (cons 2 newBlockName20_4) (assoc 2 blk1) blk1))
+            (setq obj1 (vlax-ename->vla-object blk))
+            (vla-explode obj1)
+            (entdel blk)
+            (setq obj1 nil)
+            (print rotation)
+            (if obj1
+            (progn
+            (entdel ent)
+            (setq cnt (1- cnt)))
+            )
+                )
+    
+              (t ; Если ни одно из условий не выполнено, оставляем блок без изменений
+                (print rotation)))
+
+            (setq blk nil)
+            (setq rotation nil)
+            (setq pt1 nil))
+          (prompt "\nВыбранный блок не разрешен."))
+        (setq i (1+ i))))
+    (setq exitloop t))
+    (setq allowedBlocks nil)
+;ДЛЯ ОБОГРЕВАТЕЛЯ МАЛОГО КОНЕЦ
+
+;УДАЛЕНИЕ БЛОКОВ
+(if sel
+    (progn
+      (setq cnt (sslength sel))
+      (setq i 0)
+      (while (< i cnt)
+        (setq ent (ssname sel i))
+        (setq blk (entget ent))
+        (setq name (cdr (assoc 2 blk)))
+  
+           (if (equal name deleteBlockName) ;Удаление ненужного блока 1
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+          (if (equal name deleteBlockName2) ;Удаление ненужного блока 2
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName3) ;Удаление ненужного блока 3
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+         (if (equal name deleteBlockName4) ;Удаление ненужного блока 4
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+          (if (equal name deleteBlockName5) ;Удаление ненужного блока 5
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+         (if (equal name deleteBlockName6) ;Удаление ненужного блока 6
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+         (if (equal name deleteBlockName7) ;Удаление ненужного блока 7
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+         (if (equal name deleteBlockName8) ;Удаление ненужного блока 8
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+         (if (equal name deleteBlockName9) ;Удаление ненужного блока 9
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+         (if (equal name deleteBlockName10) ;Удаление ненужного блока 10
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )        
+         (if (equal name deleteBlockName11) ;Удаление ненужного блока 11
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+         (if (equal name deleteBlockName12) ;Удаление ненужного блока 12
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName13) ;Удаление ненужного блока 13
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName14) ;Удаление ненужного блока 14
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName15) ;Удаление ненужного блока 15
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName16) ;Удаление ненужного блока 16
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName17) ;Удаление ненужного блока 17
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName18) ;Удаление ненужного блока 18
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName19) ;Удаление ненужного блока 18
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName20) ;Удаление ненужного блока 18
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName21) ;Удаление ненужного блока 18
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName22) ;Удаление ненужного блока 18
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName23) ;Удаление ненужного блока 18
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName24) ;Удаление ненужного блока 18
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName25) ;Удаление ненужного блока 18
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName26) ;Удаление ненужного блока 18
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName27) ;Удаление ненужного блока 18
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName28) ;Удаление ненужного блока 18
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName29) ;Удаление ненужного блока 18
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName30) ;Удаление ненужного блока 18
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName31) ;Удаление ненужного блока 18
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName32) ;Удаление ненужного блока 18
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName33) ;Удаление ненужного блока 18
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName34) ;Удаление ненужного блока 18
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName35) ;Удаление ненужного блока 18
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName36) ;Удаление ненужного блока 18
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName37) ;Удаление ненужного блока 18
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName38) ;Удаление ненужного блока 18
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+        (if (equal name deleteBlockName39) ;Удаление ненужного блока 18
+          (progn
+            (entdel ent)
+            (setq cnt (1- cnt))
+          )
+        )
+         (setq i (1+ i))
+        
+      ) ;while конец
+      (prompt "\nБлок удален.")
+      )
+      ) ;if конец
+  (princ)
+)
+
